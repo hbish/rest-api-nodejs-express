@@ -1,0 +1,58 @@
+### Get All Books
+GET http://localhost:4000/api/books
+Accept: application/json
+
+### Get By Books Genre
+GET http://localhost:4000/api/books?genre=Fantasy
+Accept: application/json
+
+### Get By ID
+GET http://localhost:4000/api/books/5cb18be1e6945d1f4e208c47
+Accept: application/json
+
+### Add new Book
+POST http://localhost:4000/api/books
+Content-Type: application/json
+
+{
+  "genre": "Biography",
+  "author": "Ben Shi"
+}
+
+### Update Book
+PUT http://localhost:4000/api/books/5cb18be1e6945d1f4e208c47
+Accept: application/json
+Content-Type: application/json
+
+{
+  "read": false,
+  "title": "Ben's Book 3",
+  "genre": "Biography",
+  "author": "Ben Shi"
+}
+
+### Patch Book as Read
+PATCH http://localhost:4000/api/books/5cb18e191ce22b1f98d06c3b
+Accept: application/json
+Content-Type: application/json
+
+{
+  "read": true
+}
+
+### Patch Book ID should fail
+PATCH http://localhost:4000/api/books/5cb18e191ce22b1f98d06c3b
+Accept: application/json
+Content-Type: application/json
+
+{
+  "_id": "s",
+  "read": true
+}
+
+### Delete book by id
+DELETE http://localhost:4000/api/books/5cb18e191ce22b1f98d06c3b
+Accept: application/json
+
+###
+
